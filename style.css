@@ -1,0 +1,77 @@
+body{
+	width:610px;
+	font-family:verdana;
+	font-size: 80%;
+}
+	
+#shopping-cart table{width:100%;background-color:#F0F0F0;}
+#shopping-cart table td{background-color:#FFFFFF;}
+#shopping-cart {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 630;
+  padding-top: 8px;
+  width: 500px;
+  margin-bottom:30px;
+}
+
+.txt-heading{    
+	padding: 10px 10px;
+    border-radius: 2px;
+    color: #FFF;
+    background: #0e351b;
+	margin-bottom:10px;
+}
+a.btnVerwijderArtikel{color:#D60202;border:0;padding:2px 10px;font-size:0.9em;}
+a.btnVerwijderArtikel:visited{color:#D60202;border:0;padding:2px 10px;font-size:0.9em;}
+
+#btnEmpty {
+	background-color: #ffffff;
+    border: #FFF 1px solid;
+    padding: 1px 10px;
+    color: #ff0000;
+    font-size: 0.8em;
+    float: right;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.btnToevoegen{    background-color: #1a5629;
+    border: 0;
+    padding: 3px 10px;
+    color: #ffffff;
+    margin-left: 2px;
+    border-radius: 2px;
+}
+
+.cart-item {border-bottom: #79b946 1px dotted;padding: 10px;}
+#product-grid {margin-bottom:30px;}
+.product-item {	float:left;	background: #ffffff;margin:15px 10px;	padding:5px;border:#CCC 1px solid;border-radius:4px;}
+.product-item div{text-align:center;	margin:10px;}
+.product-price {    
+	color: #189173;
+    font-weight: 600;
+	text-align: right;
+}
+.product-image {height:100px;background-color:#FFF;}
+.clear-float{clear:both;}
+.demo-input-box{border-radius:2px;border:#CCC 1px solid;padding:2px 1px;}
+
+.beschrijving{
+width: 150px;
+height: 100px;
+}
+
+th {
+	font-size: 80%;
+}
+
+td {
+	font-size: 80%;
+}
+
+img{
+  max-width:150px;
+  max-height:150px;
+}
