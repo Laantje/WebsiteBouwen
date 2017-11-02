@@ -68,7 +68,7 @@ if(!empty($_GET["action"])) {
 <body>
 <!-- Winkelmandje -->
 <div id="shopping-cart">
-<div class="txt-heading">Winkelmandje <a id="btnEmpty" href="index.php?action=empty">Mandje leeg gooien</a></div>
+<div class="txt-heading">Winkelmandje <a id="btnEmpty" href="winkelwagen.php?action=empty">Mandje leeg gooien</a></div>
 <?php
 if(isset($_SESSION["winkelkar"])){
     $item_total = 0;
@@ -91,7 +91,7 @@ if(isset($_SESSION["winkelkar"])){
 				<td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><?php echo $item["productid"]; ?></td>
 				<td style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo $item["aantal"]; ?></td>
 				<td style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo "€".$item["prijs"]; ?></td>
-				<td style="text-align:center;border-bottom:#F0F0F0 1px solid;"><a href="index.php?action=remove&id=<?php echo $item["naam"]; ?>" class="btnVerwijderArtikel">Verwijder artikel</a></td>
+				<td style="text-align:center;border-bottom:#F0F0F0 1px solid;"><a href="winkelwagen.php?action=remove&id=<?php echo $item["naam"]; ?>" class="btnVerwijderArtikel">Verwijder artikel</a></td>
 			</tr>
 		<?php
         $item_total += ($item["prijs"]*$item["aantal"]);
@@ -121,7 +121,7 @@ if(isset($_SESSION["winkelkar"])){
 		//Producten tonen op scherm
 	?>
 		<div class="product-item">
-			<form method="post" action="index.php?action=add&id=<?php echo $product_array[$key]["naam"]; ?>">
+			<form method="post" action="winkelwagen.php?action=add&id=<?php echo $product_array[$key]["naam"]; ?>">
 			<div class="product-image"><img src="<?php echo $product_array[$key]["plaatje"]; ?>"></div>
 			<div><strong><?php echo $product_array[$key]["naam"]; ?></strong></div>
 			<div class="beschrijving"><?php echo $product_array[$key]["beschrijving"];?></div>
