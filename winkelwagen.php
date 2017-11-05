@@ -1,5 +1,11 @@
 <?php
-session_start();
+
+if (session_id() == ""){
+//check of er al een session is
+	session_start();
+}
+
+include "toolbar.php";
 require("databasefuncties.php");
 $db_handle = new Database();
 
@@ -77,21 +83,19 @@ if(isset($_SESSION["winkelkar"])){
 <tbody>
 <tr>
 <th style="text-align:left;"><strong>Naam</strong></th>
-<th style="text-align:left;"><strong>ID</strong></th>
 <th style="text-align:right;"><strong>Aantal</strong></th>
 <th style="text-align:right;"><strong>Prijs</strong></th>
-<th style="text-align:center;"><strong>Verwijderen</strong></th>
+<th style="text-align:center;"><strong> </strong></th>
 </tr>	
 <?php		
     foreach ($_SESSION["winkelkar"] as $item){
-		//Producten die geselecteerd zijn, laten zien in winkelmandje
+	//Producten die geselecteerd zijn, laten zien in winkelmandje
 		?>
 			<tr>
 				<td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><strong><?php echo $item["naam"]; ?></strong></td>
-				<td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><?php echo $item["productid"]; ?></td>
 				<td style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo $item["aantal"]; ?></td>
 				<td style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo "€".$item["prijs"]; ?></td>
-				<td style="text-align:center;border-bottom:#F0F0F0 1px solid;"><a href="winkelwagen.php?action=remove&id=<?php echo $item["naam"]; ?>" class="btnVerwijderArtikel">Verwijder artikel</a></td>
+				<td style="text-align:center;border-bottom:#F0F0F0 1px solid;"><a href="winkelwagen.php?action=remove&id=<?php echo $item["naam"]; ?>" class="btnVerwijderArtikel"><img width="10" height="10" src="images/verwijder.png"></a></td>
 			</tr>
 		<?php
         $item_total += ($item["prijs"]*$item["aantal"]);
@@ -102,7 +106,9 @@ if(isset($_SESSION["winkelkar"])){
 	<td colspan="5" align=right><strong>Total:</strong> <?php echo "€".number_format((float)$item_total, 2, '.', ''); ?></td> <!-- number_format zorgt er voor dat er 2 decimalen achter de komma te zien zijn -->
 </tr>
 <tr>
-	<td colspan="5" align=right><input type="submit" value="Betalen" class="btnToevoegen" /></td>
+	<form action="winkelwagen2.php">
+	<td colspan="5" align=right><input type="submit" value="Naar winkelwagen" class="btnToevoegen" /></td>
+	</form>
 </tr>
 </tbody>
 </table>		
@@ -134,5 +140,10 @@ if(isset($_SESSION["winkelkar"])){
 	}
 	?>
 </div>
+<footer>
+<?php
+include "footer.php";
+?>
+</footer>
 </body>
 </html>
