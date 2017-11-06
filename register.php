@@ -1,9 +1,12 @@
 <HTML>
 	<HEAD>
-		<TITLE>Website Titel</TITLE>
+		<TITLE>Wascessoires - Register</TITLE>
 		<style>
 			.error {color: #FF0000;}
 		</style>
+    <?php
+      include ('toolbar.php');
+    ?>
 	</HEAD>
 	<BODY BGCOLOR="FFFFFF">
 		<?php
@@ -137,7 +140,7 @@
     				$gender = test_input($_POST["gender"]);
   				}
 			
-				//Als
+				//Als er geen empty post fields zijn en geen errors, stuur de gegevens naar de database
   				if(!$emptyField && !$hasError) {
   					//Check gender, change to number
   					if($gender == "man") {
@@ -202,4 +205,9 @@
   			<input type="submit" name="submit" value="Vesturen">  
 		</form>
 	</BODY>
+  <FOOTER>
+    <?php
+      include ('toolbar.php');
+    ?>
+  </FOOTER>
 </HTML>
