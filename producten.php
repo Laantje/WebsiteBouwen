@@ -1,11 +1,14 @@
 <?php
+
 if (session_id() == ""){
 //check of er al een session is
 	session_start();
 }
+
 include "toolbar.php";
 require("databasefuncties.php");
 $db_handle = new Database();
+
 if(!empty($_GET["action"])) {
 //Als er op een knop is gedrukt, voer uit:
 	switch($_GET["action"]) {
@@ -125,7 +128,7 @@ if(isset($_SESSION["winkelkar"])){
 	?>
 		<div class="product-item">
 			<form method="post" action="producten.php?action=add&id=<?php echo $product_array[$key]["name"]; ?>">
-			<div class="product-image"><img src="<?php echo $product_array[$key]["image"]; ?>" width="100" height="100"></div>
+			<div class="product-image"><img src="<?php echo $product_array[$key]["image"]; ?>"></div>
 			<div><strong><?php echo $product_array[$key]["name"]; ?></strong></div>
 			<div class="beschrijving"><?php echo $product_array[$key]["description"];?></div>
 			<div class="product-price"><?php echo "€".$product_array[$key]["price"]; ?></div>
