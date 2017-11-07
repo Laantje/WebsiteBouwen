@@ -3,7 +3,7 @@ if (session_id() == ""){
 //check of er al een session is
 	session_start();
 }
-require("content/databasefuncties.php");
+require("db/databasefuncties.php");
 $db_handle = new Database();
 include "content/toolbar.php";
 ?>
