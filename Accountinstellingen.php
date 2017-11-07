@@ -35,16 +35,18 @@ $gegevens = mysqli_fetch_assoc($result);
 ?>
 <?php
 if ($_SERVER["REQUEST_METHOD"]=="POST") {
+	//Kijk of er een error is
+	$hasError = false;
 //testen of de velden zijn ingevuld
         if (empty($_POST['username'])) {
           $username_Err="je moet een gebruikersnaam invullen";
         }
         else {
-          $username_new = mysqli_real_escape_string($db, inputTest($_POST['username']));
-		  if (!preg_match ("/^[a-zA-Z\d]*$/",$username)) {
-			  $usernameErr = "Alleen letters en cijfers zijn toegestaan";
-		  }
-			  
+		  $username_new = mysqli_real_escape_string($db, inputTest($_POST['username']));
+		  if (!preg_match("/^[a-zA-Z\d]*$/",$username_new)) {
+		      			$usernameErr = "Alleen letters en cijfers zijn toegestaan";
+						$hasError = true;
+ 		   			}
         }
 
         if (empty($_POST['firstname'])) {
@@ -52,6 +54,10 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
         }
         else {
           $firstname_new = mysqli_real_escape_string($db, inputTest($_POST['firstname']));
+		  if (!preg_match("/^[a-zA-Z]*$/",$firstname_new)) {
+		      			$firstnameErr = "Alleen letters zijn toegestaan";
+		      			$hasError = true;
+		  }
         }
 
         if (empty($_POST['lastname'])) {
@@ -59,38 +65,62 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
         }
         else {
           $lastname_new = mysqli_real_escape_string($db, inputTest($_POST['lastname']));
+		  		    	if (!preg_match("/^[a-zA-Z]*$/",$lastname_new)) {
+		      			$lastnameErr = "Alleen letters zijn toegestaan";
+		      			$hasError = true;
+						}
         }
         if (empty($_POST['email'])) {
           $emailErr="je moet een emailadres invullen";
         }
         else {
           $email_new = mysqli_real_escape_string($db, inputTest($_POST['email']));
+		  if (!filter_var($email_new, FILTER_VALIDATE_EMAIL)) {
+      					$emailErr = "E-mail is niet valide";
+      					$hasError = true;
+		  }
         }
 		if (empty($_POST['adress'])) {
           $adressErr="je moet een adres invullen";
         }
         else {
           $adress_new = mysqli_real_escape_string($db, inputTest($_POST['adress']));
+		  		    		if (!preg_match("/^[a-zA-Z\d ]*$/",$adress_new)) {
+		      			$adressErr = "Alleen letters en cijfers zijn toegestaan";
+		      			$hasError = true;
+							}
         }
 		if (empty($_POST['postalcode'])) {
           $postalcodeErr="je moet een postcode invullen";
         }
         else {
           $postalcode_new = mysqli_real_escape_string($db, inputTest($_POST['postalcode']));
-        }
+        if(!preg_match('/^[1-9]{1}[0-9]{3}[A-Z]{2}$/', $postalcode_new)) {
+		      			$postalcodeErr = "Postcode moet bestaan uit 4 cijfers en 2 letters.";
+		      			$hasError = true;
+		}
+		}
 		if (empty($_POST['city'])) {
           $cityErr="je moet een stad invullen";
         }
         else {
           $city_new = mysqli_real_escape_string($db, inputTest($_POST['city']));
-        }
+			if (!preg_match("/^[a-zA-Z ]*$/",$city_new)) {
+		      			$cityErr = "Alleen letters zijn toegestaan";
+		      			$hasError = true;
+			}
+		}
 		if (empty($_POST['phone'])) {
           $phoneErr="je moet een telefoonnummer invullen";
         }
         else {
           $phone_new = mysqli_real_escape_string($db, inputTest($_POST['phone']));
-        }
-	if ($_SERVER["REQUEST_METHOD"]=="POST" AND !empty($username_new) AND !empty($firstname_new) AND !empty($lastname_new) AND !empty($email_new) AND !empty($adress_new) AND !empty($postalcode_new) AND !empty($city_new) AND !empty($phone_new)){
+			if (!preg_match("/^[\d]*$/",$phone_new)) {
+		      			$phoneErr = "Alleen cijfers zijn toegestaan";
+		      			$hasError = true;
+			}
+		}
+	if ($_SERVER["REQUEST_METHOD"]=="POST" AND !empty($username_new) AND !empty($firstname_new) AND !empty($lastname_new) AND !empty($email_new) AND !empty($adress_new) AND !empty($postalcode_new) AND !empty($city_new) AND !empty($phone_new) AND !$hasError){
 
     $update="UPDATE user SET username = '$username_new', firstname = '$firstname_new', lastname = '$lastname_new', email ='$email_new', adress ='$adress_new', postalcode = '$postalcode_new', city = '$city_new', phone = '$phone_new' WHERE username = '$naam';";
 
