@@ -66,7 +66,6 @@ if(!empty($_GET["action"])) {
 <html>
 <head>
 <title>wascessoireshop.nl</title>
-<link href="css/style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
 <!-- Winkelmandje -->
