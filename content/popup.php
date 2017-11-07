@@ -49,16 +49,16 @@
 </style>
 
 <div class="dropdown">
-  <button class="dropbtn"><img src="menu.png" height="25px"></button>
+  <button class="dropbtn"><img src="img/menu.png" height="25px"></button>
   <div class="dropdown-content">
-  	<a href="producten.php"><img src="product.png" height="15px"> Productpagina</a>
+  	<a href="producten.php"><img src="img/product.png" height="15px"> Productpagina</a>
     <?php
     if(isset(($_SESSION["gebruiker"])) != null) {
-    	echo '<a href="#"><img src="account.png" height="15px"> Account</a>';
-        echo '<a href="content/logout.php"><img src="logout.png" height="15px"> Uitloggen</a>';
+    	echo '<a href="#"><img src="img/account.png" height="15px"> Account</a>';
+        echo '<a href="content/logout.php"><img src="img/logout.png" height="15px"> Uitloggen</a>';
     }
     else {
-    	echo '<a href="register.php"><img src="register.png" height="15px"> Registreren</a>';
+    	echo '<a href="register.php"><img src="img/register.png" height="15px"> Registreren</a>';
     }
     ?>
   </div>
