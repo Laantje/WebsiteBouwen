@@ -30,4 +30,9 @@ class Database {
 		return $rowcount;	
 	}
 }
+$host = "localhost";
+$user = "root";
+$password = "";
+$database = "wasknijperdb";
+$conn = mysqli_connect($host, $user, $password, $database);
 ?>

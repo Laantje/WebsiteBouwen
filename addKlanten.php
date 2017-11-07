@@ -10,7 +10,7 @@
 	</HEAD>
 	<BODY BGCOLOR="FFFFFF">
 		<?php
-			require_once ('database.php');
+			require_once ('db/database.php');
 			// Required field names
 			$required = array('username', 'password', 'firstname', 'lastname', 'email', 'adress', 'postalcode', 'city', 'phone', 'gender');
 			// Initiëren van variabelen en ze "lege" waarde toekennen
@@ -31,15 +31,6 @@
 		      			$usernameErr = "Alleen letters en cijfers zijn toegestaan";
 		      			$hasError = true;
  		   			}
-            else {
-              //Kijk of username al bestaat
-              $mysql_get_users = mysqli_query($db, "SELECT * FROM user where username='$username'");
-              $get_rows = mysqli_affected_rows($db);
-              if($get_rows >=1){
-                $usernameErr = "Gebruikersnaam bestaat al.";
-                $hasError = true;
-              }
-            }
  		 		}
  		 		if (empty($_POST["password"])) {
     				$passwordErr = "Wachtwoord is verplicht";
@@ -103,8 +94,8 @@
   				} else {
 		    		$postalcode = test_input($_POST["postalcode"]);
 		    		// check of $postalcode uitsluitend uit letters bestaan
-		    		if(!preg_match('/^[1-9]{1}[0-9]{3}[A-Z]{2}$/', $postalcode)) {
-		      			$postalcodeErr = "Postcode moet bestaan uit 4 cijfers en 2 letters.";
+		    		if (!preg_match("/^[a-zA-Z\d]*$/",$postalcode)) {
+		      			$postalcodeErr = "Alleen letters en cijfers zijn toegestaan";
 		      			$hasError = true;
  		   			}
  		 		}
@@ -147,12 +138,12 @@
   						$gender = 1;
   					}
   					//Maak sql query aan
-					  $query = "INSERT INTO user (username,password,userlevel,firstname,lastname,gender,email,adress,postalcode,city,phone) VALUES ('$username','$password','0','$firstname','$lastname','$gender','$email','$adress','$postalcode','$city','$phone')";
-					  //Verwerk sql query
-					  $data = mysqli_query ($db, $query)or die(mysqli_error($db)); 
-					  if($data) { 
-						  header("Location: register_confirm.php");
-					  }
+					$query = "INSERT INTO user (username,password,userlevel,firstname,lastname,gender,email,adress,postalcode,city,phone) VALUES ('$username','$password','0','$firstname','$lastname','$gender','$email','$adress','$postalcode','$city','$phone')";
+					//Verwerk sql query
+					$data = mysqli_query ($db, $query)or die(mysqli_error($db)); 
+					if($data) { 
+						header("Location: register_confirm.php");
+					}
   				}
 			}
 			function test_input($data) {
@@ -202,7 +193,7 @@
 	</BODY>
   <FOOTER>
     <?php
-      include ('footer.php');
+      include ('toolbar.php');
     ?>
   </FOOTER>
 </HTML>
