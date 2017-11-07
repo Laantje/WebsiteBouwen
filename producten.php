@@ -3,8 +3,8 @@ if (session_id() == ""){
 //check of er al een session is
 	session_start();
 }
-include "toolbar.php";
-require("databasefuncties.php");
+include "content/toolbar.php";
+require("db/databasefuncties.php");
 $db_handle = new Database();
 if(!empty($_GET["action"])) {
 //Als er op een knop is gedrukt, voer uit:
@@ -66,7 +66,7 @@ if(!empty($_GET["action"])) {
 <html>
 <head>
 <title>wascessoireshop.nl</title>
-<link href="style.css" type="text/css" rel="stylesheet" />
+<link href="css/style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
 <!-- Winkelmandje -->
@@ -92,7 +92,7 @@ if(isset($_SESSION["winkelkar"])){
 				<td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><strong><?php echo $item["name"]; ?></strong></td>
 				<td style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo $item["aantal"]; ?></td>
 				<td style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo "€".$item["price"]; ?></td>
-				<td style="text-align:center;border-bottom:#F0F0F0 1px solid;"><a href="producten.php?action=remove&id=<?php echo $item["name"]; ?>" class="btnVerwijderArtikel"><img width="10" height="10" src="images/verwijder.png"></a></td>
+				<td style="text-align:center;border-bottom:#F0F0F0 1px solid;"><a href="producten.php?action=remove&id=<?php echo $item["name"]; ?>" class="btnVerwijderArtikel"><img width="10" height="10" src="img/verwijder.png"></a></td>
 			</tr>
 		<?php
         $item_total += ($item["price"]*$item["aantal"]);
@@ -139,7 +139,7 @@ if(isset($_SESSION["winkelkar"])){
 </div>
 <footer>
 <?php
-include "footer.php";
+include "content/footer.php";
 ?>
 </footer>
 </body>

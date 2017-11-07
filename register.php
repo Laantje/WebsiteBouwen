@@ -5,12 +5,12 @@
 			.error {color: #FF0000;}
 		</style>
     <?php
-      include ('toolbar.php');
+      include ('content/toolbar.php');
     ?>
 	</HEAD>
 	<BODY BGCOLOR="FFFFFF">
 		<?php
-			require_once ('database.php');
+			require_once ('db/database.php');
 			// Required field names
 			$required = array('username', 'password', 'firstname', 'lastname', 'email', 'adress', 'postalcode', 'city', 'phone', 'gender');
 			// Initiëren van variabelen en ze "lege" waarde toekennen
@@ -202,7 +202,7 @@
 	</BODY>
   <FOOTER>
     <?php
-      include ('footer.php');
+      include ('content/footer.php');
     ?>
   </FOOTER>
 </HTML>

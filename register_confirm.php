@@ -5,7 +5,7 @@
 			.error {color: #FF0000;}
 		</style>
     <?php
-      include ('toolbar.php');
+      include ('content/toolbar.php');
     ?>
 	</HEAD>
 	<BODY BGCOLOR="FFFFFF">
@@ -14,7 +14,7 @@
 	</BODY>
   <FOOTER>
     <?php
-      include ('toolbar.php');
+      include ('content/toolbar.php');
     ?>
   </FOOTER>
 </HTML>

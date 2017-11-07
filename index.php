@@ -2,9 +2,9 @@
 <html>
     <title> Project </title>  
     <?php
-    include('toolbar.php');
+    include('content/toolbar.php');
     ?>
-    <link href="stijlblad2.css" rel="stylesheet" type="text/css"/>
+    <link href="css/stijlblad2.css" rel="stylesheet" type="text/css"/>
   
     <!-- bij de content komt informatie over de site -->
     <div id="content"><center><h1>Welkom op de website Wascessoires!</h1></center>
@@ -26,8 +26,8 @@
             </p>       
         </div>
         <div id="block2">
-            <a href="register.php"><img src="meldjeaan.png"></a>
+            <a href="register.php"><img src="img/meldjeaan.png"></a>
         </div>
 </div>
-<?php include('footer.php')?>
+<?php include('content/footer.php')?>
 </div>

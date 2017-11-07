@@ -1,16 +1,16 @@
 <!DOCTYPE HTML>
 
 <!-- hiermee roepen we het stijlblad op -->
-<link href="css/stijlblad.css" rel="stylesheet" type="text/css"/> 
+<link href="stijlblad.css" rel="stylesheet" type="text/css"/> 
 <!-- hiermee roepen we de toolbar op -->
-    <?php include("content/toolbar.php");
-          include("content/inlogsysteem.php"); ?>
+    <?php include("toolbar.php");
+          include("inlogsysteem.php"); ?>
         <!-- hier start de div inloggen met daarin de forms -->
         <div id="inloggen">
             <?php
                 if(isset(($_SESSION["gebruiker"])) != null) {
                     if(!empty($_POST)) {
-                        header("Location: index.php");
+                        header("Location: homep.php");
                     }
                     echo '<h2>U bent al ingelogd.</h2>';
                 }
@@ -28,5 +28,5 @@
                 }
             ?>
         </div>
-    <?php include("content/footer.php");?>
+    <?php include("footer.php");?>
 </HTML>

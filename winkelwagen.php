@@ -3,15 +3,15 @@ if (session_id() == ""){
 //check of er al een session is
 	session_start();
 }
-require("databasefuncties.php");
+require("content/databasefuncties.php");
 $db_handle = new Database();
-include "toolbar.php";
+include "content/toolbar.php";
 ?>
 
 <html>
 <head>
 <title>wascessoireshop.nl</title>
-<link href="style.css" type="text/css" rel="stylesheet" />
+<link href="css/style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
 <div id="product-grid">
@@ -60,7 +60,7 @@ if(isset($_SESSION["winkelkar"])){
 </body>
 <footer>
 <?php
-include "footer.php";
+include "content/footer.php";
 ?>
 </footer>
 </html>

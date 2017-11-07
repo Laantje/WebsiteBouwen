@@ -1,11 +1,11 @@
 <!DOCTYPE HTML>
-<?php include("inlogsysteem.php"); ?>
+<?php include("content/inlogsysteem.php"); ?>
 <!-- hiermee roepen we het stijlblad op -->
-<link href="stijlblad1.css" rel="stylesheet" type="text/css"/> 
+<link href="css/stijlblad1.css" rel="stylesheet" type="text/css"/> 
     <!-- hier starten de divs, de stijl van de divs wordt aangegeven op het stijlblad -->
     <div id="header">
         <div id="homeknop">
-            </br><a href="homep.php"><img src="home.png" height="30px" title="Homepagina"></a>
+            </br><a href="index.php"><img src="img/home.png" height="30px" title="Homepagina"></a>
         </div>    
             <div id="topmenu">
                     </br>    
@@ -25,7 +25,7 @@
                     }
                 ?>&nbsp&nbsp&nbsp&nbsp
                 <!-- dit zijn de icons voor de knoppen in de toolbar -->
-                <?php include('popup.php');?>&nbsp&nbsp
+                <?php include('content/popup.php');?>&nbsp&nbsp
                 <a href="inlogpagina.php"><img src="login.png" height="25px" title="Inloggen"></a>&nbsp&nbsp
                 <a href="winkelwagen.php"><img src="cart2.png" height="25px" title="Winkelmandje"></a>
     <?php
@@ -42,7 +42,7 @@
                 <!-- dit is het logo -->
                 
             </div>
-            <div id="logo"><img src="logo.png" align="middle"></div>
+            <div id="logo"><a href="index.php"><img src="logo.png" align="middle"></a></div>
 
     </div>
     <!-- dit stukje code maakt een lijn, waar de header stopt en waar de content van de site begint -->

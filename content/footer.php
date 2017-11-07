@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 
 <!-- hiermee roepen we het stijlblad op -->
-<link href="stijlblad1.css" rel="stylesheet" type="text/css"/>     
+<link href="css/stijlblad1.css" rel="stylesheet" type="text/css"/>     
 
     <div id="footer">
         <div id="tekst">
