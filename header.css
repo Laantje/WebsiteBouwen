@@ -1,0 +1,32 @@
+body {
+    margin: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #CCCCCC;
+}
+
+#left_sidebar {
+    width: 15%;
+    height: 640px;
+    float: left;
+    background-color: #FFFF00;
+}
+
+#content {
+    width: 70%;
+    height: 640px;
+    float: left;
+    background-color: #C40808;
+}
+
+#right_sidebar {
+    width: 15%;
+    height: 640px;
+    float: left;
+    background-color: #FFFF00;
+}
+    #header {
+    float: right;
+    width: 100%;
+    height: 125px;
+    background-color: #FDFDFD;
+} 
