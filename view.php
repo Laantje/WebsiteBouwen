@@ -45,4 +45,3 @@ $db_handle = new Database();
 </table>	
 </div>
 </body>
-

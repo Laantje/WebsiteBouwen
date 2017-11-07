@@ -20,7 +20,6 @@ body {
     position: absolute;
     top: 643px;
     border: 1px solid #000000;
-    font-size: 14px;
 }
 
 
@@ -36,7 +35,7 @@ body {
     right: 100px;
     float: right;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 14px;
+    font-weight: Bold;
 }
 
 #inloggen {
@@ -67,4 +66,10 @@ body {
     top: 11px;
     left: 100px;
     float: left;
+}
+
+#footer {
+    bottom: 0;
+    position: static;
+    width:100%;
 }
