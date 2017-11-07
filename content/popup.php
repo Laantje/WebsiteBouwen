@@ -51,12 +51,14 @@
 <div class="dropdown">
   <button class="dropbtn"><img src="menu.png" height="25px"></button>
   <div class="dropdown-content">
-    <a href="register.php"><img src="register.png" height="15px"> Registreren</a>
-    <a href="#"><img src="account.png" height="15px"> Account</a>
-    <a href="producten.php"><img src="product.png" height="15px"> Productpagina</a>
+  	<a href="producten.php"><img src="product.png" height="15px"> Productpagina</a>
     <?php
     if(isset(($_SESSION["gebruiker"])) != null) {
-        echo '<a href="logout.php"><img src="logout.png" height="15px"> Uitloggen</a>';
+    	echo '<a href="#"><img src="account.png" height="15px"> Account</a>';
+        echo '<a href="content/logout.php"><img src="logout.png" height="15px"> Uitloggen</a>';
+    }
+    else {
+    	echo '<a href="register.php"><img src="register.png" height="15px"> Registreren</a>';
     }
     ?>
   </div>
