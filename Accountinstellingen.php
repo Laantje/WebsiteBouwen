@@ -3,6 +3,9 @@
 <html>
 	<head>
 		<title>Accountinstellingen</title>
+<?php
+include 'toolbar.php';
+?>
 	</head>
 	<body>
 	<h2 align="center">Accountinstellingen</h2>
@@ -126,6 +129,14 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 
 	          if(mysqli_query($db, $update)){
 				  echo "het is gelukt!";
+				  $gebruikersnaam = $username_new;
+				  $voornaam = $firstname_new;
+				  $achternaam = $lastname_new;
+				  $emailadres = $email_new;
+				  $adres = $adress_new;
+				  $postcode = $postalcode_new;
+				  $stad = $city_new;
+				  $telefoon = $phone_new;
 			  }
 			  else {
 				  echo "Updaten is niet gelukt.";
@@ -167,4 +178,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 
 
 </body>
+<FOOTER>
+<?php include 'footer.php'; ?>
+</FOOTER>
 </html>
