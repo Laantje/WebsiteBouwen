@@ -142,7 +142,7 @@
 					//Verwerk sql query
 					$data = mysqli_query ($db, $query)or die(mysqli_error($db)); 
 					if($data) { 
-						header("Location: register_confirm.php");
+						header("Location: viewklanten.php");
 					}
   				}
 			}

@@ -2,7 +2,6 @@
 include "toolbar.php";
 require("databasefuncties.php");
 $db_handle = new Database();
-
 if(!empty($_GET["action"])) {
 //Als er op een knop is gedrukt, voer uit:
 	switch($_GET["action"]) {
@@ -65,7 +64,7 @@ if(!empty($_GET["action"])) {
 		}
 	}
 ?>
-<form action="viewProducten.php?action=add">
+<form action="addProduct.php?action=add">
 	<input type="submit" value="Product Toevoegen">
 </form>
 </tbody>
