@@ -1,18 +1,23 @@
 <!DOCTYPE html>
+<?php 
+include ("content/toolbar.php");
+if (empty($_SESSION['gebruiker'])){
+	echo "Je bent nog niet ingelogd";
 
+}
+else {
+?>
 <html>
 	<head>
 		<title>Accountinstellingen</title>
-<?php
-include 'toolbar.php';
-?>
 	</head>
 	<body>
 	<h2 align="center">Accountinstellingen</h2>
 <?php
-include 'database.php';
+include ("db/database.php");
 include 'functions.php';
-$naam = "persoon1";
+$naam = $_SESSION['gebruiker'];
+
 
 
 
@@ -179,6 +184,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 
 </body>
 <FOOTER>
-<?php include 'footer.php'; ?>
+<?php include ("content/footer.php"); ?>
 </FOOTER>
 </html>
+<?php } ?>
