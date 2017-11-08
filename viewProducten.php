@@ -56,7 +56,7 @@ if(!empty($_GET["action"])) {
 				<td style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo $product_array[$key]["image"]; ?></td>
 				<td style="text-align:right;border-bottom:#F0F0F0 1px solid;">
 					<a href="viewProducten.php?action=remove&id=<?php echo $product_array[$key]["name"]; ?>"><img width="15" height="15" src="images/verwijder.png"></a>
-					<a href="viewProducten.php?action=edit&id=<?php echo $product_array[$key]["name"]; ?>"><img width="15" height="15" src="images/edit.png"></a>
+					<a href="editProducten.php?action=edit&id=<?php echo $product_array[$key]["name"]; ?>"><img width="15" height="15" src="images/edit.png"></a>
 				</td>
 			</tr>
 
