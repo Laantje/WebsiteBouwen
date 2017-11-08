@@ -17,8 +17,7 @@ body {
     width: 1534px;
     height: 89px;
     background-color: #FFFFFF;
-    position: absolute;
-    top: 643px;
+    bottom: 0px;
     border: 1px solid #000000;
     font-size: 14px;
 }

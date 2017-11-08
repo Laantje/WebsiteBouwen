@@ -91,10 +91,10 @@ if(isset($_SESSION["winkelkar"])){
 				<td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><strong><?php echo $item["name"]; ?></strong></td>
 				<td style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo $item["aantal"]; ?></td>
 				<td style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo "€".$item["price"]; ?></td>
-				<td style="text-align:center;border-bottom:#F0F0F0 1px solid;"><a href="producten.php?action=remove&id=<?php echo $item["name"]; ?>" class="btnVerwijderArtikel"><img width="10" height="10" src="img/verwijder.png"></a></td>
+				<td style="text-align:center;border-bottom:#F0F0F0 1px solid;"><a href="producten.php?action=remove&id=<?php echo $item["name"]; ?>" class="btnVerwijderArtikel"><img width="10" height="10" src="images/verwijder.png"></a></td>
 			</tr>
 		<?php
-        $item_total += ($item["price"]*$item["aantal"]);
+        $item_total += ((float)$item["price"]*$item["aantal"]);
 		}
 		?>
 
@@ -124,9 +124,10 @@ if(isset($_SESSION["winkelkar"])){
 	?>
 		<div class="product-item">
 			<form method="post" action="producten.php?action=add&id=<?php echo $product_array[$key]["name"]; ?>">
-			<div class="product-image"><img src="<?php echo $product_array[$key]["image"]; ?>"></div>
+			<div class="product-image"><img src="<?php echo $product_array[$key]["img"]; ?>" width="150" height="96"></div>
 			<div><strong><?php echo $product_array[$key]["name"]; ?></strong></div>
 			<div class="beschrijving"><?php echo $product_array[$key]["description"];?></div>
+			<div class="voorraad"><?php echo "Voorraad: ".$product_array[$key]["stock"];?></div>
 			<div class="product-price"><?php echo "€".$product_array[$key]["price"]; ?></div>
 			<div><input type="text" name="aantal" value="1" size="2" /><input type="submit" value="Toevoegen" class="btnToevoegen" /></div>
 			</form>

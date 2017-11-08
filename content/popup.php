@@ -54,7 +54,7 @@
   	<a href="producten.php"><img src="img/product.png" height="15px"> Productpagina</a>
     <?php
     if(isset(($_SESSION["gebruiker"])) != null) {
-    	echo '<a href="#"><img src="img/account.png" height="15px"> Account</a>';
+    	echo '<a href="accountinstellingen.php"><img src="img/account.png" height="15px"> Account</a>';
         echo '<a href="content/logout.php"><img src="img/logout.png" height="15px"> Uitloggen</a>';
     }
     else {

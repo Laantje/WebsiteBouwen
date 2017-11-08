@@ -6,7 +6,7 @@ if(session_ID()== ""){
 include('db/database.php');/* hier moet de connectie met de database nog toegevoegd worden */
         /*  hier krijgen de variabelen GN en WW de waarde van de ingevoerde gebruikersnaam en wachtwoord door de gebruiker
             ook worden hier de ingevoerde waardes 'veilig gemaakt' door de functie 'mysqli_real_escape_string' */        
-    if(!empty($_POST)){
+    if(!empty($_POST['gebruikersnaam'])){
         $gebruikersnaam = mysqli_real_escape_string($db, $_POST['gebruikersnaam']);
         $wachtwoord = mysqli_real_escape_string($db, $_POST['wachtwoord']);
         /*  hier word alles geselecteerd van de gebruiker waar de gebruikersnaam en wachtwoord matchen, als deze niet matchen, heeft

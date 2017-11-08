@@ -26,14 +26,14 @@
                 ?>&nbsp&nbsp&nbsp&nbsp
                 <!-- dit zijn de icons voor de knoppen in de toolbar -->
                 <?php include('content/popup.php');?>&nbsp&nbsp
-                <a href="inlogpagina.php"><img src="login.png" height="25px" title="Inloggen"></a>&nbsp&nbsp
-                <a href="winkelwagen.php"><img src="cart2.png" height="25px" title="Winkelmandje"></a>
+                <a href="inlogpagina.php"><img src="img/login.png" height="25px" title="Inloggen"></a>&nbsp&nbsp
+                <a href="winkelwagen.php"><img src="img/cart2.png" height="25px" title="Winkelmandje"></a>
     <?php
                 if(isset(($_SESSION["userlevel"]))=="0"){
                     echo ("");
                 }
                 elseif(($_SESSION["userlevel"])=="1"){
-                    ?>&nbsp<a href="admin.php"><img src="admin.png" height="25px"></a><?php
+                    ?>&nbsp<a href="admin.php"><img src="img/admin.png" height="25px"></a><?php
                 }
                 else{
                     echo ("");
@@ -42,7 +42,7 @@
                 <!-- dit is het logo -->
                 
             </div>
-            <div id="logo"><a href="index.php"><img src="logo.png" align="middle"></a></div>
+            <div id="logo"><a href="index.php"><img src="img/logo.png" align="middle"></a></div>
 
     </div>
     <!-- dit stukje code maakt een lijn, waar de header stopt en waar de content van de site begint -->

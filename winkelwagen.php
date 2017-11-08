@@ -41,7 +41,7 @@ if(isset($_SESSION["winkelkar"])){
 				<td style="text-align:center;border-bottom:#F0F0F0 1px solid;"><a href="winkelwagen.php?action=remove&id=<?php echo $item["name"]; ?>" class="btnVerwijderArtikel">Verwijder artikel</a></td>
 			</tr>
 		<?php
-        $item_total += ($item["price"]*$item["aantal"]);
+        $item_total += ((float)$item["price"]*$item["aantal"]);
 		}
 		?>
 
