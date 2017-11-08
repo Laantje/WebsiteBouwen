@@ -197,16 +197,18 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
   			Telefoonnummer: <input type="text" name="phone" value="<?php echo $telefoon;?>">
   			<span class="error">* <?php echo $phoneErr;?></span>
   			<br><br>
-  			<input type="submit" name="submit2" value="bevestigen">
+  			
+			
+</form>
+<form action="bevesteging.php">
+<input type="submit" name="submit2" value="bevestigen">
 </form>
 <?php if (isset($_POST['submit2'])) {
-		if($done == "done"){
 			header('Location: bevesteging.php');
 		}
 		else {
 			echo "Er zijn ergens nog geen gegevens in gevuld";
 		}
-}
 ?>	
 </body>
 </html>
